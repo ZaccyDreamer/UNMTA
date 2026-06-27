@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNMTA | University of Nairobi Microprocessor Technology Association</title>
+  <meta name="description" content="Official platform for the University of Nairobi Microprocessor Technology Association (UNMTA). Bridging technology, physics, innovation, and industry.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header id="main-header">
+    <div class="nav-container">
+      <div class="logo-group">
+        <img src="images/unmta-logo.png" alt="UNMTA Logo" class="unmta-logo">
+        <img src="images/uon-logo.png" alt="University of Nairobi Logo" class="uon-logo">
+        <div class="logo-text">
+          <span class="logo-title">UNMTA</span>
+          <span class="logo-subtitle">UoN Microprocessor Tech Association</span>
+        </div>
+      </div>
+      <nav id="nav-links">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#constitution">Constitution</a></li>
+          <li><a href="#join">Join Us</a></li>
+          <li><a href="#admin" id="admin-nav-link">Admin</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" id="mobile-menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-circle-dot animate-pulse"></i> Chiromo Campus • Physics Dept
+          </div>
+          <h1>Innovating the Future of Technology</h1>
+          <p class="lead">Bridging the gap between physics, applied microprocessor technology, astrophysics, and the corporate tech world. We build, collaborate, and lead.</p>
+          <div class="cta-group">
+            <a href="#join" class="btn btn-primary">Join Association <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#constitution" class="btn btn-secondary">Read Constitution <i class="fa-solid fa-book"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="quick-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num" id="stat-members">150+</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Undergrad Courses</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" id="stat-events">15+</div>
+            <div class="stat-label">Annual Events</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Industry Partners</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <h2>About UNMTA</h2>
+          <p>Learn about our roots, who we cater to, and how we empower students in the Physics Department to succeed in campus and beyond.</p>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-main glass-card">
+            <span class="course-badge">ESTABLISHED FOR IMPACT</span>
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--text-primary);">Why UNMTA Was Started</h3>
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">UNMTA was founded to bridge the critical gap between academic theory and industry demands. It serves as a collaborative sandbox where students interact, innovate, share ideas, and collaborate on real-world engineering and astrophysics challenges.</p>
+            <p style="margin-bottom: 25px; color: var(--text-secondary);">Through our platform, first-year students gain direct access to continuing students and a robust alumni network, receiving academic mentorship, career guidance, and insights into technical career paths.</p>
+            
+            <div class="about-features">
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <div class="about-feature-text">
+                  <h3>Alumni Networking</h3>
+                  <p>Direct communication pipeline connecting first-years with successful alumni in top tech companies.</p>
+                </div>
+              </div>
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="fa-solid fa-rocket"></i></div>
+                <div class="about-feature-text">
+                  <h3>Practical Innovation</h3>
+                  <p>Transitioning from physics and mathematics concepts to building microcontrollers, sensors, and space models.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-side">
+            <div class="courses-box">
+              <h3 style="font-size: 1.5rem; margin-bottom: 25px;">Our Core Academic Disciplines</h3>
+              
+              <div class="course-card glass-card">
+                <span class="course-badge">I39</span>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px;">B.Sc. in Microprocessor Technology, Control & Instrumentation</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Focusing on system design, electronics, microprocessors, automation, feedback control systems, and instrumentation systems.</p>
+              </div>
+
+              <div class="course-card astronomy glass-card">
+                <span class="course-badge">I44</span>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px;">B.Sc. in Astronomy and Astrophysics</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Exploring stellar mechanics, computational astrophysics, space science, telescope design, and cosmic radiation physics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="mission-vision-container">
+          <div class="mv-card mission glass-card">
+            <div class="mv-header">
+              <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+              <h3>Our Mission</h3>
+            </div>
+            <p class="mv-text">To foster a collaborative ecosystem for Physics Department students by providing hands-on hardware training, coding simulations, hackathons, expert-led mentorship, and industrial placement linkages, thereby equipping members to innovate globally.</p>
+          </div>
+          <div class="mv-card vision glass-card">
+            <div class="mv-header">
+              <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+              <h3>Our Vision</h3>
+            </div>
+            <p class="mv-text">To be the premier student-led technical association in the East African region, driving excellence in hardware prototyping, instrumentation design, applied space sciences, and professional readiness.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Collaborations Section -->
+    <section class="collaborations-section">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <h3 style="font-size: 1.5rem; color: var(--text-secondary);">Key Collaborative Partners & Industries</h3>
+        </div>
+        <div class="collaborations-grid">
+          <div class="collab-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+          <div class="collab-item"><i class="fa-brands fa-dell"></i> Dell Technologies</div>
+          <div class="collab-item"><i class="fa-solid fa-atom"></i> Nuclear Regulatory Authority</div>
+          <div class="collab-item"><i class="fa-solid fa-building-columns"></i> UoN Chiromo Campus</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <h2>Association Leadership</h2>
+          <p>Meet the dedicated team steering UNMTA towards innovation, academic excellence, and corporate collaboration.</p>
+        </div>
+        
+        <div class="leadership-grid">
+          <!-- Chairman -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Zacchaeus Mutua</h3>
+            <div class="leader-role">Chairperson</div>
+            <p class="leader-desc">Directs executive operations, coordinates partnerships, and chairs main governance meetings.</p>
+          </div>
+          <!-- Vice Chairman -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Jane Wanjiku</h3>
+            <div class="leader-role">Vice Chairperson</div>
+            <p class="leader-desc">Assists the chairperson, oversees internal committees, and acts as student welfare coordinator.</p>
+          </div>
+          <!-- Sec Gen -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-file-signature"></i></div>
+            <h3>Austin Otieno</h3>
+            <div class="leader-role">Secretary-General</div>
+            <p class="leader-desc">Handles official communications, minutes of meetings, and coordinates administrative tasks.</p>
+          </div>
+          <!-- Treasurer -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-coins"></i></div>
+            <h3>Clara Chebet</h3>
+            <div class="leader-role">Treasurer</div>
+            <p class="leader-desc">Manages association bank accounts, handles financial transparency, and registration fees.</p>
+          </div>
+          <!-- Org Sec -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-calendar-days"></i></div>
+            <h3>Kevin Kamau</h3>
+            <div class="leader-role">Organizing Secretary</div>
+            <p class="leader-desc">Plans industrial visits, hackathons, physical events, and sports activities.</p>
+          </div>
+          <!-- Social Media Mgr -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-brands fa-instagram"></i></div>
+            <h3>Esther Nduku</h3>
+            <div class="leader-role">Social Media Manager</div>
+            <p class="leader-desc">Coordinates our LinkedIn, Instagram pages, outreach posts, and branding.</p>
+          </div>
+          <!-- Asst Social Media Mgr -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-brands fa-linkedin-in"></i></div>
+            <h3>Daniel Kipkoech</h3>
+            <div class="leader-role">Asst. Social Media Mgr</div>
+            <p class="leader-desc">Assists in creating content, posters, event announcements, and newsletters.</p>
+          </div>
+          <!-- Academic Rep -->
+          <div class="leader-card glass-card">
+            <div class="leader-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Dr. Evans Omondi</h3>
+            <div class="leader-role">Alumni Representative</div>
+            <p class="leader-desc">Maintains networks with industry alumni and links expert panels for career guidance.</p>
+          </div>
+
+          <!-- Class Reps -->
+          <div class="class-rep-grid">
+            <h4 style="text-align: center; margin-bottom: 20px; font-size: 1.2rem; color: var(--text-secondary);">Class Representatives</h4>
+            <div class="class-rep-list">
+              <div class="class-rep-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>MicroTech 4th Year: <strong>Zacchaeus Mutua</strong></span>
+              </div>
+              <div class="class-rep-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Astrophysics 3rd Year: <strong>Sarah Nkatha</strong></span>
+              </div>
+              <div class="class-rep-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>MicroTech 2nd Year: <strong>Samuel Wamai</strong></span>
+              </div>
+              <div class="class-rep-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Astrophysics 1st Year: <strong>Cynthia Atieno</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section-padding" style="background: rgba(15, 23, 42, 0.2);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Events & Programs</h2>
+          <p>Join our academic and engagement calendar designed to spark creativity, innovation, and practical knowledge transfer.</p>
+        </div>
+        
+        <div class="events-grid">
+          <!-- Hackathons -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>UNMTA Hackathons</h3>
+            <p>Annual hardware and software coding competitions. Build smart control systems, IoT nodes, or astrophysical data pipelines under 48 hours.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Semester 1</span>
+              <span><i class="fa-solid fa-location-dot"></i> Physics Lab II</span>
+            </div>
+          </div>
+          <!-- Physics Day -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-atom"></i></div>
+            <h3>Physics & Space Day</h3>
+            <p>A grand exhibition celebrating breakthroughs in physics and astronomy. Features telescope viewings, guest speakers, and project showcases.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Annual Event</span>
+              <span><i class="fa-solid fa-location-dot"></i> Chiromo Courtyard</span>
+            </div>
+          </div>
+          <!-- Industrial Visits -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-industry"></i></div>
+            <h3>Industrial Visits</h3>
+            <p>On-site learning at nuclear regulatory facilities, telecom infrastructure, or software engineering hubs like Microsoft ADC.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Twice a Year</span>
+              <span><i class="fa-solid fa-location-dot"></i> Various Sites</span>
+            </div>
+          </div>
+          <!-- Orientations -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-compass"></i></div>
+            <h3>First-Year Orientation</h3>
+            <p>A welcoming event designed to introduce first-year students to microprocessor labs, course expectations, and their continuing peers.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Sept intake</span>
+              <span><i class="fa-solid fa-location-dot"></i> UoN Boardroom</span>
+            </div>
+          </div>
+          <!-- Alumni talks -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Alumni Career Talks</h3>
+            <p>Regular mentorship webinars and physical panels with alumni sharing their transition journey from Chiromo Campus into corporate jobs.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Monthly</span>
+              <span><i class="fa-solid fa-location-dot"></i> Online/Hybrid</span>
+            </div>
+          </div>
+          <!-- Games and sports -->
+          <div class="event-card glass-card">
+            <div class="event-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <h3>1st Year Games & Sports</h3>
+            <p>Fun team-building games, chess tournaments, and e-sports matches to help new students blend with continuing students and alumni.</p>
+            <div class="event-details">
+              <span><i class="fa-solid fa-calendar"></i> Semester 2</span>
+              <span><i class="fa-solid fa-location-dot"></i> Chiromo Fields</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Constitution Section -->
+    <section id="constitution" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <h2>UNMTA Constitution</h2>
+          <p>Explore the official governance framework, rules, regulations, and bylaws governing UNMTA operations.</p>
+        </div>
+        
+        <div class="constitution-container">
+          <!-- Sidebar Table of Contents -->
+          <div class="constitution-sidebar">
+            <h3>Table of Contents</h3>
+            <ul class="const-toc-list">
+              <li class="const-toc-item active" data-sec="sec-title"><button><i class="fa-solid fa-bookmark"></i> Title Page</button></li>
+              <li class="const-toc-item" data-sec="sec-preamble"><button><i class="fa-solid fa-book-open"></i> Preamble</button></li>
+              <li class="const-toc-item" data-sec="sec-vision"><button><i class="fa-solid fa-eye"></i> Vision & Mission</button></li>
+              <li class="const-toc-item" data-sec="sec-objectives"><button><i class="fa-solid fa-bullseye"></i> Objectives</button></li>
+              <li class="const-toc-item" data-sec="sec-eligibility"><button><i class="fa-solid fa-user-check"></i> Eligibility</button></li>
+              <li class="const-toc-item" data-sec="sec-registration"><button><i class="fa-solid fa-receipt"></i> Registration</button></li>
+              <li class="const-toc-item" data-sec="sec-rights"><button><i class="fa-solid fa-scale-balanced"></i> Rights & Duties</button></li>
+              <li class="const-toc-item" data-sec="sec-activities"><button><i class="fa-solid fa-circle-nodes"></i> Programs</button></li>
+              <li class="const-toc-item" data-sec="sec-leadership"><button><i class="fa-solid fa-sitemap"></i> Leadership</button></li>
+              <li class="const-toc-item" data-sec="sec-financial"><button><i class="fa-solid fa-cash-register"></i> Finance</button></li>
+              <li class="const-toc-item" data-sec="sec-meetings"><button><i class="fa-solid fa-users"></i> Meetings</button></li>
+              <li class="const-toc-item" data-sec="sec-discipline"><button><i class="fa-solid fa-gavel"></i> Discipline</button></li>
+              <li class="const-toc-item" data-sec="sec-amendments"><button><i class="fa-solid fa-pen-to-square"></i> Amendments</button></li>
+              <li class="const-toc-item" data-sec="sec-dissolution"><button><i class="fa-solid fa-circle-stop"></i> Dissolution</button></li>
+            </ul>
+          </div>
+          
+          <!-- Content Pane -->
+          <div class="constitution-content-pane">
+            <div class="constitution-actions">
+              <button class="btn btn-secondary" onclick="window.print()" style="padding: 8px 16px; font-size: 0.85rem;"><i class="fa-solid fa-print"></i> Print Document</button>
+            </div>
+            
+            <div class="constitution-text">
+              
+              <!-- Title Page -->
+              <div id="sec-title" class="const-sec-view active">
+                <div class="const-title-page">
+                  <img src="images/unmta-logo.png" alt="UNMTA Logo">
+                  <h1>THE CONSTITUTION OF UNMTA</h1>
+                  <div class="subtitle">University of Nairobi Microprocessors Technology Association</div>
+                  <div class="motto">"Bridging Physics, Control Systems, and Space through Innovation"</div>
+                  <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-muted);">Registered Association Code: UON/DOS/UNMTA/2026<br>Office of the Dean of Students, Chiromo Campus</p>
+                </div>
+              </div>
+
+              <!-- Preamble -->
+              <div id="sec-preamble" class="const-sec-view">
+                <h2>Preamble</h2>
+                <p>WE, THE STUDENTS of the University of Nairobi, Physics Department, pursuing Bachelor of Science in Microprocessor Technology & Instrumentation, and Bachelor of Science in Astronomy & Astrophysics:</p>
+                <p>RECOGNIZING the necessity of bridging the gap between rigorous academic physics principles and practical, real-world engineering, microcontrollers, control systems, and computational astrophysics application;</p>
+                <p>AWARE of the immense value of building a strong collaborative community that links first-year undergraduates, continuing scholars, experienced alumni, and corporate industry giants;</p>
+                <p>DETERMINED to foster teamwork, technical excellence, entrepreneurship, professional development, and community impact;</p>
+                <p>DO HEREBY ADOPT, ENACT, and bind ourselves to this Constitution of the University of Nairobi Microprocessors Technology Association (UNMTA) on this day.</p>
+              </div>
+
+              <!-- Vision & Mission -->
+              <div id="sec-vision" class="const-sec-view">
+                <h2>Vision & Mission</h2>
+                <h3>Article 3.1: Vision Statement</h3>
+                <p>To be the premier student-led technical association in the East African region, driving excellence in hardware prototyping, instrumentation design, applied space sciences, and professional readiness.</p>
+                
+                <h3>Article 3.2: Mission Statement</h3>
+                <p>To foster a collaborative ecosystem for Physics Department students by providing hands-on hardware training, coding simulations, hackathons, expert-led mentorship, and industrial placement linkages, thereby equipping members to innovate globally.</p>
+              </div>
+
+              <!-- Objectives -->
+              <div id="sec-objectives" class="const-sec-view">
+                <h2>Objectives of the Association</h2>
+                <p>The primary core objectives of UNMTA are:</p>
+                <ol>
+                  <li><strong>Skill Development & Innovation:</strong> To promote hands-on microcontroller coding, embedded system programming, instrumentation controls, and astronomical data analysis.</li>
+                  <li><strong>Practical Application:</strong> To assist members in applying theoretical physics and astrophysics models to physical builds.</li>
+                  <li><strong>Research Support:</strong> To support members in conducting research, thesis preparation, and senior year capstone design projects.</li>
+                  <li><strong>Leadership and Teamwork:</strong> To build administrative and project management skills through organizing hackathons, community events, and technical teams.</li>
+                  <li><strong>Corporate & Professional Linkage:</strong> To establish and maintain connections with tech companies (such as Dell, Microsoft) and local institutions (such as the Nuclear Regulatory Authority) for internships and industrial visits.</li>
+                  <li><strong>Mentorship & Peer Guidance:</strong> To connect first-year students with continuing upper-year students and alumni experts.</li>
+                  <li><strong>Academic Growth:</strong> To organize tutoring cohorts, examination review sessions, and tech bootcamps.</li>
+                  <li><strong>Entrepreneurship:</strong> To encourage members to commercialize technical builds and create hardware startups.</li>
+                </ol>
+              </div>
+
+              <!-- Eligibility -->
+              <div id="sec-eligibility" class="const-sec-view">
+                <h2>Membership Eligibility</h2>
+                <h3>Article 6.1: General Eligibility</h3>
+                <p>Membership is open to all registered students of the University of Nairobi who demonstrate interest in applied science, instrumentation, space research, and microprocessor applications.</p>
+                
+                <h3>Article 6.2: Primary Target Members</h3>
+                <p>The core constituency of the association comprises students residing at Chiromo Campus under the Department of Physics, specifically:</p>
+                <ul>
+                  <li>Bachelor of Science in Microprocessor Technology, Control and Instrumentation (formerly known as course I39).</li>
+                  <li>Bachelor of Science in Astronomy and Astrophysics (formerly known as course I44).</li>
+                  <li>Other physical science and engineering students meeting general interest criteria.</li>
+                </ul>
+                
+                <h3>Article 6.3: Non-Discrimination</h3>
+                <p>Any eligible student may join the association regardless of their year of study, race, gender, background, or religious affiliations, provided they comply with the terms of this constitution.</p>
+              </div>
+
+              <!-- Registration & Renewal -->
+              <div id="sec-registration" class="const-sec-view">
+                <h2>Membership Registration & Renewal</h2>
+                <h3>Article 7.1: Registration Fees</h3>
+                <p>To obtain active membership status, an eligible student must complete the digital registration form and pay a non-refundable entry fee of <strong>KSh 200</strong>.</p>
+                
+                <h3>Article 7.2: Annual Renewal</h3>
+                <p>To sustain membership rights, access resources, and vote in elections, members must pay a yearly renewal fee of <strong>KSh 100</strong> at the commencement of each academic year.</p>
+                
+                <h3>Article 7.3: Activation of Status</h3>
+                <p>A member's profile is declared "Active" only after registration, validation of credentials, and payment clearance. The administrator reserves the right to review the registration list.</p>
+              </div>
+
+              <!-- Rights & Duties -->
+              <div id="sec-rights" class="const-sec-view">
+                <h2>Rights & Responsibilities of Members</h2>
+                <h3>Article 8.1: Rights of Members</h3>
+                <p>Every active member has the right to:</p>
+                <ul>
+                  <li>Participate in all general meetings, workshops, hackathons, and social outings.</li>
+                  <li>Utilize association resources, library tools, lab equipment, and access shared cloud repositories.</li>
+                  <li>Vote in annual general elections and run for executive leadership positions (subject to criteria in Article 10).</li>
+                  <li>Express feedback, suggest updates, and petition the executive committee.</li>
+                </ul>
+
+                <h3>Article 8.2: Responsibilities of Members</h3>
+                <p>Every member is obligated to:</p>
+                <ul>
+                  <li>Maintain high levels of academic integrity and professional conduct at all university premises.</li>
+                  <li>Participate actively in workshops and help mentor junior members.</li>
+                  <li>Respect the directives of the elected executive committee and general association guidelines.</li>
+                  <li>Timely pay annual renewal fees and registration charges.</li>
+                </ul>
+              </div>
+
+              <!-- Activities & Programs -->
+              <div id="sec-activities" class="const-sec-view">
+                <h2>Activities and Programs</h2>
+                <p>The association shall run the following activities divided into two portfolios:</p>
+                
+                <h3>Portfolio A: Academic & Professional Programs</h3>
+                <ul>
+                  <li><strong>Hackathons:</strong> Coding and hardware sprints focused on embedded systems.</li>
+                  <li><strong>Webinars & Workshops:</strong> Industry expert talks focusing on microcontroller architectures, telemetry, and observatory telescopes.</li>
+                  <li><strong>Technical Talks & Conferences:</strong> Presenting research papers, space telemetry records, and control algorithms.</li>
+                  <li><strong>Industrial Visits:</strong> Tours to technical laboratories, Nuclear Regulatory authorities, space centers, and manufacturing units.</li>
+                  <li><strong>Mentorship:</strong> Structured alumni-to-student career coaching pipelines.</li>
+                </ul>
+
+                <h3>Portfolio B: Student Engagement Activities</h3>
+                <ul>
+                  <li><strong> orientations:</strong> Annual welcome events introducing first-years to the physics department resources.</li>
+                  <li><strong>Networking Events:</strong> Corporate dinners, tech networking sessions, and inter-association forums.</li>
+                  <li><strong>Community Outreach:</strong> Promoting STEM education in high schools and performing volunteer hardware maintenance.</li>
+                  <li><strong>Team-Building:</strong> Yearly sports days, board game tournaments, and social treks.</li>
+                </ul>
+              </div>
+
+              <!-- Leadership Structure -->
+              <div id="sec-leadership" class="const-sec-view">
+                <h2>Leadership Structure</h2>
+                <p>The executive committee shall be elected annually and comprise the following portfolios:</p>
+                <ol>
+                  <li><strong>Chairperson:</strong> The overall executive lead; represents the association in university administration, signs official correspondence, and oversees project execution.</li>
+                  <li><strong>Vice Chairperson:</strong> Assists the Chairperson; directs internal committees, handles student welfare, and acts as president in the chair's absence.</li>
+                  <li><strong>Secretary-General:</strong> Custodian of association records; handles minutes of meetings, calendars of events, and coordinates registration applications.</li>
+                  <li><strong>Treasurer:</strong> Handles finance; collects registration fees, updates receipt ledgers, draft balance sheets, and reports financial standing.</li>
+                  <li><strong>Organizing Secretary:</strong> Coordinates logistics, event venues, corporate permissions, and industrial visits.</li>
+                  <li><strong>Social Media Manager:</strong> Administers the association's online brand, handles LinkedIn/Instagram postings, and design posters.</li>
+                  <li><strong>Assistant Social Media Manager:</strong> Assists the manager, writes newsletters, and schedules online outreach events.</li>
+                  <li><strong>Class Representatives:</strong> Elected reps representing Microprocessor (I39) and Astronomy (I44) cohorts across all four academic years.</li>
+                </ol>
+              </div>
+
+              <!-- Finance -->
+              <div id="sec-financial" class="const-sec-view">
+                <h2>Financial Management</h2>
+                <h3>Article 11.1: Sources of Funds</h3>
+                <p>The association's finances shall be drawn from:</p>
+                <ul>
+                  <li>Registration fees (KSh 200) and Renewal fees (KSh 100).</li>
+                  <li>Donations from university alumni, professors, and well-wishers.</li>
+                  <li>Sponsorships from collaborating companies (Microsoft, Dell, etc.).</li>
+                  <li>Grants for innovation research projects and student hackathons.</li>
+                </ul>
+
+                <h3>Article 11.2: Transparency and Reports</h3>
+                <p>The Treasurer must present a audited financial report during the Annual General Meeting (AGM) and make all financial accounts open to inspection by the executive committee and university auditor.</p>
+              </div>
+
+              <!-- Meetings -->
+              <div id="sec-meetings" class="const-sec-view">
+                <h2>Meetings</h2>
+                <h3>Article 12.1: Regular Meetings</h3>
+                <p>The general body shall meet at least three times every academic semester. Technical workshops and project groups shall meet weekly or biweekly as determined by group captains.</p>
+                
+                <h3>Article 12.2: Quorum</h3>
+                <p>A quorum for any constitutional amendment or election voting shall consist of at least two-thirds (2/3) of all active registered members of the association.</p>
+                
+                <h3>Article 12.3: Apology and Absences</h3>
+                <p>Executive committee members who are unable to attend scheduled meetings must issue a written apology to the Secretary-General at least 24 hours prior.</p>
+              </div>
+
+              <!-- Discipline -->
+              <div id="sec-discipline" class="const-sec-view">
+                <h2>Discipline and Conduct</h2>
+                <h3>Article 13.1: Misconduct</h3>
+                <p>Any member who acts in a manner that damages the reputation of the association, misappropriates funds, violates university codes, or behaves unprofessionally will face disciplinary action.</p>
+                
+                <h3>Article 13.2: Disciplinary Procedures</h3>
+                <p>Disciplinary actions will be conducted by an independent committee appointed by the Vice Chairperson, comprising:
+                  1. A warning letter detailing the infraction.
+                  2. A suspension period (up to one semester) for repeating offenses.
+                  3. Permanent termination of membership for financial fraud, theft, or severe misconduct.
+                </p>
+              </div>
+
+              <!-- Amendments -->
+              <div id="sec-amendments" class="const-sec-view">
+                <h2>Amendments</h2>
+                <p>Any clause of this constitution may be reviewed, amended, or repealed subject to:</p>
+                <ol>
+                  <li>A written proposal signed by at least 15 active members submitted to the Secretary-General.</li>
+                  <li>Discussion of the proposal during a Special General Meeting.</li>
+                  <li>Approval by a two-thirds (2/3) majority vote of registered active members attending the general voting.</li>
+                </ol>
+              </div>
+
+              <!-- Dissolution -->
+              <div id="sec-dissolution" class="const-sec-view">
+                <h2>Dissolution Clause</h2>
+                <p>The association may only be dissolved if supported by a 90% vote of all registered members. In the event of dissolution, all equipment, assets, and balances shall be transferred to the University of Nairobi Physics Department laboratory to support future technical students.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="section-padding" style="background: linear-gradient(180deg, rgba(7, 11, 19, 0.95) 0%, rgba(7, 11, 19, 0.4) 100%), url('images/nairobi-bg.png') no-repeat center center; background-size: cover; background-attachment: fixed;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Become a Member</h2>
+          <p>Join the ranks of innovators, developers, and researchers. Pay registration fees securely via M-Pesa to activate your account.</p>
+        </div>
+        
+        <div class="join-container">
+          <div class="join-info glass-card">
+            <h3>Why Join UNMTA?</h3>
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">Gain hands-on expertise, participate in hackathons, network with industry professionals, visit nuclear research plants, and gain crucial insights about what next after completing campus.</p>
+            
+            <div class="fee-structure">
+              <div class="fee-row">
+                <span>Entry Registration (One-time)</span>
+                <span class="fee-val">KSh 200</span>
+              </div>
+              <div class="fee-row">
+                <span>Annual Renewal Fee</span>
+                <span class="fee-val">KSh 100</span>
+              </div>
+              <div class="fee-row">
+                <span>Status Activation</span>
+                <span class="fee-val" style="color: var(--success);">Instant (Via M-Pesa)</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.9rem; color: var(--text-muted);">
+              <i class="fa-solid fa-circle-info"></i> Your KSh 200 fee is non-refundable. Funds go directly towards purchasing development kits (Arduino, ESP32, sensors) for general lab training.
+            </div>
+          </div>
+
+          <div class="join-form-wrapper glass-card">
+            <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Registration Form</h3>
+            <form id="member-registration-form">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <input type="text" id="reg-name" class="form-control" placeholder="e.g. John Doe" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="reg-no">Registration Number</label>
+                <input type="text" id="reg-no" class="form-control" placeholder="e.g. I39/8492/2022" required>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-email">UoN Student Email</label>
+                <input type="email" id="reg-email" class="form-control" placeholder="e.g. jdoe@student.uonbi.ac.ke" required>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-course">Academic Course</label>
+                <select id="reg-course" class="form-control" required>
+                  <option value="" disabled selected>Select your course</option>
+                  <option value="Bachelor of Science in Microprocessor Technology and Instrumentation">Microprocessor Technology (I39)</option>
+                  <option value="Bachelor of Science in Astronomy and Astrophysics">Astronomy and Astrophysics (I44)</option>
+                  <option value="Other Related Scientific Field">Other Physics/Scientific course</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-year">Year of Study</label>
+                <select id="reg-year" class="form-control" required>
+                  <option value="" disabled selected>Select your year</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                  <option value="Alumni">Alumni</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-phone">M-Pesa Phone Number</label>
+                <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. 0712345678" required>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="reg-agree" required>
+                <label for="reg-agree">I agree to abide by the rules and regulations outlined in the UNMTA Constitution and satisfy annual subscription fees.</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Pay & Join (KSh 200) <i class="fa-solid fa-wallet"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="section-padding" style="background: #030712;">
+      <div class="container">
+        
+        <!-- Admin Login Panel -->
+        <div id="admin-login-panel" class="admin-section">
+          <div class="admin-login-card glass-card">
+            <i class="fa-solid fa-user-gear"></i>
+            <h2>Admin Portal</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Access the administrator workspace to oversee registration listings and active members.</p>
+            
+            <form id="admin-login-form">
+              <div class="form-group">
+                <label for="admin-pass">Enter Administrator Password</label>
+                <input type="password" id="admin-pass" class="form-control" placeholder="••••••••••••" required>
+                <div id="admin-login-error" style="color: var(--error); font-size: 0.85rem; margin-top: 8px; text-align: left; display: none;"></div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Log In <i class="fa-solid fa-right-to-bracket"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Admin Dashboard Panel -->
+        <div id="admin-dashboard-panel" class="admin-dashboard">
+          
+          <div class="admin-nav-bar">
+            <div>
+              <h2>Administrator Control Panel</h2>
+              <p style="color: var(--text-secondary);">Manage association members, status parameters, and registrations.</p>
+            </div>
+            <button class="admin-logout-btn" id="admin-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+          </div>
+
+          <!-- Dashboard Stats -->
+          <div class="admin-stats-grid">
+            <div class="admin-stat-card">
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Total Registrants</span>
+                <div class="val" id="admin-stat-total">0</div>
+              </div>
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="admin-stat-card">
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Active Members</span>
+                <div class="val" id="admin-stat-active" style="color: var(--success);">0</div>
+              </div>
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="admin-stat-card">
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Total Treasury (KSh)</span>
+                <div class="val" id="admin-stat-funds" style="color: var(--secondary);">0</div>
+              </div>
+              <i class="fa-solid fa-vault"></i>
+            </div>
+          </div>
+
+          <!-- Actions Bar -->
+          <div class="admin-actions-bar">
+            <div class="search-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="member-search" class="form-control" placeholder="Search members by name, reg no...">
+            </div>
+            <button class="btn btn-primary" id="open-add-member-modal"><i class="fa-solid fa-user-plus"></i> Add New Member</button>
+          </div>
+
+          <!-- Member Table -->
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Reg Number</th>
+                  <th>Email</th>
+                  <th>Course</th>
+                  <th>Year</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="member-table-body">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-group" style="margin-bottom: 20px;">
+            <img src="images/unmta-logo.png" alt="UNMTA Logo" class="unmta-logo">
+            <span class="logo-title">UNMTA</span>
+          </div>
+          <p>The University of Nairobi Microprocessor Technology Association is student-led and centered at the Physics Department, Chiromo Campus.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/unmta_association/" target="_blank" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/unmta-university-of-nairobi-microprocessor-and-technology-association/posts/?feedView=all" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#constitution">Constitution</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Microprocessor Technology (I39)</a></li>
+            <li><a href="#about">Astronomy & Astrophysics (I44)</a></li>
+            <li><a href="https://uonbi.ac.ke" target="_blank">University of Nairobi</a></li>
+            <li><a href="https://physics.uonbi.ac.ke" target="_blank">Physics Department</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Support</h4>
+          <div class="footer-contact-info">
+            <span><i class="fa-solid fa-envelope"></i> unmta@uonbi.ac.ke</span>
+            <span><i class="fa-solid fa-location-dot"></i> Chiromo Campus, Physics Lab II, Nairobi, Kenya</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 UNMTA. Created with technical excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Phone STK Push Simulator Overlay -->
+  <div id="simulator-overlay" class="simulator-overlay">
+    <div class="phone-mockup">
+      <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <div class="phone-status-bar">
+          <span>12:45</span>
+          <div>
+            <i class="fa-solid fa-wifi"></i>
+            <i class="fa-solid fa-signal"></i>
+            <i class="fa-solid fa-battery-full"></i>
+          </div>
+        </div>
+        
+        <!-- STK Push Screen -->
+        <div id="stk-push-screen" class="mpesa-stk-push">
+          <div class="mpesa-logo-stk">
+            <i class="fa-solid fa-mobile-screen-button"></i> M-PESA
+          </div>
+          <div class="stk-prompt">
+            Pay KSh <span id="stk-amount">200.00</span> to <strong>UNMTA ASSOCIATION</strong>.<br>
+            Enter your M-Pesa PIN:
+          </div>
+          <input type="password" id="stk-pin" class="stk-pin-input" maxlength="4" placeholder="••••">
+          <div class="stk-actions">
+            <button class="stk-btn stk-btn-cancel" id="stk-cancel">Cancel</button>
+            <button class="stk-btn stk-btn-pay" id="stk-confirm">Send</button>
+          </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="mpesa-success-screen" class="mpesa-success-screen">
+          <div class="success-icon-mpesa">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3>Payment Completed</h3>
+          <p style="color: #6b7280; font-size: 0.85rem; margin-bottom: 20px; text-align: center;">Your transaction has been processed successfully.</p>
+          
+          <div class="mpesa-receipt">
+            <div class="receipt-row">
+              <span>Merchant:</span>
+              <strong>UNMTA Association</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Amount:</span>
+              <strong id="receipt-amount">KSh 200.00</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Transaction Ref:</span>
+              <strong id="receipt-ref">TXN123456789</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Status:</span>
+              <span style="color: #137333; font-weight: bold;">PAID</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="stk-done-btn" style="width: 100%; background: #48bb78; box-shadow: none;">Done</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Add Member Directly (Admin only) -->
+  <div id="add-member-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-add-member-modal"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Add New Member Manually</h3>
+      
+      <form id="admin-add-member-form">
+        <div class="form-group">
+          <label for="admin-add-name">Full Name</label>
+          <input type="text" id="admin-add-name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-reg">Registration Number</label>
+          <input type="text" id="admin-add-reg" class="form-control" placeholder="e.g. I39/8492/2022" required>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-email">Email Address</label>
+          <input type="email" id="admin-add-email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-course">Academic Course</label>
+          <select id="admin-add-course" class="form-control" required>
+            <option value="Bachelor of Science in Microprocessor Technology and Instrumentation">Microprocessor Technology (I39)</option>
+            <option value="Bachelor of Science in Astronomy and Astrophysics">Astronomy and Astrophysics (I44)</option>
+            <option value="Other Related Scientific Field">Other Physics/Scientific course</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-year">Year of Study</label>
+          <select id="admin-add-year" class="form-control" required>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+            <option value="Alumni">Alumni</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-phone">Phone Number</label>
+          <input type="tel" id="admin-add-phone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-add-payment">Initial Payment Status</label>
+          <select id="admin-add-payment" class="form-control" required>
+            <option value="Paid">Paid (KSh 200)</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Add Member <i class="fa-solid fa-user-plus"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
