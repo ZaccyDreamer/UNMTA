@@ -1,499 +1,94 @@
-// UNMTA Application Controller
+(() => {
+  const data = window.UNMTA_DATA;
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const wa = `https://wa.me/${data.whatsappNumber}`;
+  const waJoin = `${wa}?text=${encodeURIComponent('Hello UNMTA, I would like to learn more about membership.')}`;
+  const external = 'target="_blank" rel="noopener noreferrer"';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Main Elements
-  const header = document.getElementById('main-header');
-  const navLinks = document.querySelectorAll('#nav-links a');
-  const sections = document.querySelectorAll('main > section');
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const navMenu = document.querySelector('#nav-links ul');
+  $('#activity-grid').innerHTML = data.activities.map((activity) => `
+    <article class="activity-card"><a class="activity-image" href="#membership" aria-label="Learn about UNMTA ${escapeHTML(activity.title)} activities"><img src="${escapeHTML(activity.image)}" alt="${escapeHTML(activity.alt)}" loading="lazy"><span class="activity-icon" aria-hidden="true">${activity.icon}</span></a><div class="activity-body"><span class="card-number">${activity.number} / ACTIVITY</span><h3>${escapeHTML(activity.title)}</h3><p>${escapeHTML(activity.text)}</p><a class="card-link" href="#membership" aria-label="Explore membership for ${escapeHTML(activity.title)}">Explore <span aria-hidden="true">↗</span></a></div></article>`).join('');
 
-  // Admin Variables
-  let adminPassword = '';
-  let allMembers = [];
-
-  // --- 1. Sticky Header & Active Link Highlight on Scroll ---
-  window.addEventListener('scroll', () => {
-    // Sticky Header
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  $('#collab-list').innerHTML = data.collaborations.map((name, index) => `<div class="collab-name"><span>0${index + 1}</span>${escapeHTML(name)}</div>`).join('');
+  $('#leaders-grid').innerHTML = data.leadership.map((role, index) => `<article class="leader-card"><div class="leader-top"><span class="leader-number">${String(index + 1).padStart(2, '0')}</span><span class="leader-symbol" aria-hidden="true">✳</span></div><h3>${escapeHTML(role)}</h3><p>Name to be updated</p></article>`).join('');
+  $('#gallery').innerHTML = data.gallery.map((photo, index) => `<button class="gallery-item ${photo.className}" type="button" data-photo="${index}" aria-label="View image: ${escapeHTML(photo.title)}"><img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy"><span>${escapeHTML(photo.title)} <b aria-hidden="true">↗</b></span></button>`).join('');
+  document.querySelectorAll('#activity-grid img, #gallery img').forEach((image) => image.addEventListener('error', () => {
+    if (image.dataset.fallback) return;
+    image.dataset.fallback = 'true';
+    image.src = '/images/nairobi-bg.png';
+    image.alt = 'Nairobi campus and city view';
+    const galleryItem = image.closest('.gallery-item');
+    if (galleryItem) {
+      const photo = data.gallery[Number(galleryItem.dataset.photo)];
+      photo.src = '/images/nairobi-bg.png'; photo.alt = image.alt;
     }
+  }));
 
-    // Active Section Link Highlight
-    let currentSectionId = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
+  const socialIcon = (kind) => kind === 'instagram'
+    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r=".8" class="fill-dot"/></svg>'
+    : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3.4 15V9.4H5.8V18h2.6ZM7.1 8.2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM18.3 18v-4.7c0-2.5-1.3-3.7-3.1-3.7a2.7 2.7 0 0 0-2.4 1.3V9.4h-2.6V18h2.6v-4.3c0-1.1.2-2.2 1.6-2.2s1.4 1.3 1.4 2.3V18h2.5Z"/></svg>';
+  const socialLinks = `<a href="${data.socials.linkedin}" ${external} aria-label="UNMTA on LinkedIn">${socialIcon('linkedin')}<span>LinkedIn</span></a><a href="${data.socials.instagram}" ${external} aria-label="UNMTA on Instagram">${socialIcon('instagram')}<span>Instagram</span></a>`;
+  const whatsappIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4A8 8 0 1 1 20 11.7Z"/><path d="M9 8.3c.2-.4.4-.4.7-.4h.4c.1 0 .3 0 .4.3l.7 1.6c.1.2.1.4 0 .5l-.5.6c-.2.2-.2.3 0 .5.4.7 1 1.2 1.7 1.6.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.4 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-.9-.2-2-.6-3.3-1.7-1.1-1-1.9-2.1-2.1-2.9-.3-.8.1-1.6.4-2.2Z"/></svg>';
+  $('#contact-links').innerHTML = `<a class="contact-link whatsapp-link" href="${wa}" ${external}><span class="contact-icon">${whatsappIcon}</span><span><small>MESSAGE THE ASSOCIATION</small><strong>Chat with UNMTA on WhatsApp</strong></span><b aria-hidden="true">↗</b></a><a class="contact-link" href="${data.whatsappChannel}" ${external}><span class="contact-icon" aria-hidden="true">＋</span><span><small>COMMUNITY UPDATES</small><strong>Join our WhatsApp channel</strong></span><b aria-hidden="true">↗</b></a>${socialLinks}`;
+  $('#footer-social').innerHTML = `${socialLinks}<a href="${wa}" ${external} aria-label="Chat with UNMTA on WhatsApp">${whatsappIcon}<span>WhatsApp</span></a><a href="${data.whatsappChannel}" ${external} aria-label="Join the UNMTA WhatsApp channel"><span aria-hidden="true">＋</span><span>Community</span></a>`;
+  $('#join-whatsapp').href = waJoin;
+  $('#year').textContent = new Date().getFullYear();
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // --- 2. Mobile Menu Toggle ---
-  mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-    const isShowing = navMenu.classList.contains('show');
-    mobileMenuToggle.innerHTML = isShowing 
-      ? '<i class="fa-solid fa-xmark"></i>' 
-      : '<i class="fa-solid fa-bars"></i>';
-    
-    // Quick CSS injection for mobile layout toggle
-    if (isShowing) {
-      navMenu.style.display = 'flex';
-      navMenu.style.flexDirection = 'column';
-      navMenu.style.position = 'absolute';
-      navMenu.style.top = '100%';
-      navMenu.style.left = '0';
-      navMenu.style.width = '100%';
-      navMenu.style.background = 'rgba(7, 11, 19, 0.95)';
-      navMenu.style.backdropFilter = 'blur(10px)';
-      navMenu.style.borderBottom = '1px solid var(--glass-border)';
-      navMenu.style.padding = '20px';
-      navMenu.style.gap = '15px';
-    } else {
-      navMenu.style.display = '';
-    }
-  });
-
-  // Close mobile menu on nav click
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('show');
-      mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      navMenu.style.display = '';
-    });
-  });
-
-  // --- 3. Constitution TOC Tab Switcher ---
-  const tocItems = document.querySelectorAll('.const-toc-item');
-  const secViews = document.querySelectorAll('.const-sec-view');
-
-  tocItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const targetSec = item.getAttribute('data-sec');
-      
-      // Update TOC Active Class
-      tocItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      // Update Section View Active Class
-      secViews.forEach(view => {
-        view.classList.remove('active');
-        if (view.getAttribute('id') === targetSec) {
-          view.classList.add('active');
-        }
-      });
-
-      // Scroll inside the content pane back to top
-      document.querySelector('.constitution-content-pane').scrollTop = 0;
-    });
-  });
-
-  // --- 4. Member Registration & M-Pesa Simulator ---
-  const regForm = document.getElementById('member-registration-form');
-  const simulatorOverlay = document.getElementById('simulator-overlay');
-  const stkPushScreen = document.getElementById('stk-push-screen');
-  const mpesaSuccessScreen = document.getElementById('mpesa-success-screen');
-  const stkAmount = document.getElementById('stk-amount');
-  const stkPinInput = document.getElementById('stk-pin');
-  const stkConfirmBtn = document.getElementById('stk-confirm');
-  const stkCancelBtn = document.getElementById('stk-cancel');
-  const stkDoneBtn = document.getElementById('stk-done-btn');
-  const receiptAmount = document.getElementById('receipt-amount');
-  const receiptRef = document.getElementById('receipt-ref');
-
-  let currentRegistrationId = null;
-  let currentPhone = '';
-
-  regForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('reg-name').value.trim();
-    const reg_no = document.getElementById('reg-no').value.trim();
-    const email = document.getElementById('reg-email').value.trim();
-    const course = document.getElementById('reg-course').value;
-    const year_of_study = document.getElementById('reg-year').value;
-    const phone = document.getElementById('reg-phone').value.trim();
-
-    try {
-      const response = await fetch('/api/members/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, reg_no, email, course, year_of_study, phone })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        currentRegistrationId = data.memberId;
-        currentPhone = data.phone;
-        
-        // Launch M-Pesa Simulator
-        stkAmount.textContent = "200.00";
-        stkPinInput.value = '';
-        stkPushScreen.style.display = 'block';
-        mpesaSuccessScreen.style.display = 'none';
-        simulatorOverlay.style.display = 'flex';
-      } else {
-        alert(data.message || 'Registration failed.');
-      }
-    } catch (err) {
-      console.error('Error during registration request:', err);
-      alert('A connection error occurred. Please try again.');
-    }
-  });
-
-  // M-Pesa Pin confirmation
-  stkConfirmBtn.addEventListener('click', async () => {
-    const pin = stkPinInput.value;
-    if (pin.length < 4) {
-      alert('Please enter a 4-digit M-Pesa PIN');
-      return;
-    }
-
-    // Simulate STK processing
-    stkConfirmBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
-    stkConfirmBtn.disabled = true;
-
-    // Generate simulated M-Pesa transaction reference
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let txnRef = 'K'; // MPesa keys in Kenya often start with K e.g. KQA9XX...
-    for (let i = 0; i < 9; i++) {
-      txnRef += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-
-    setTimeout(async () => {
-      try {
-        const response = await fetch('/api/members/confirm-payment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            memberId: currentRegistrationId,
-            amount: 200,
-            transactionCode: txnRef
-          })
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          receiptAmount.textContent = 'KSh 200.00';
-          receiptRef.textContent = txnRef;
-
-          stkPushScreen.style.display = 'none';
-          mpesaSuccessScreen.style.display = 'flex';
-        } else {
-          alert('Payment confirmation failed. Please retry.');
-          stkConfirmBtn.innerHTML = 'Send';
-          stkConfirmBtn.disabled = false;
-        }
-      } catch (err) {
-        console.error('Error confirming payment:', err);
-        alert('Network error confirming payment.');
-        stkConfirmBtn.innerHTML = 'Send';
-        stkConfirmBtn.disabled = false;
-      }
-    }, 2000); // 2-second simulation delay
-  });
-
-  stkCancelBtn.addEventListener('click', () => {
-    simulatorOverlay.style.display = 'none';
-    alert('M-Pesa payment canceled. Your registration remains Pending until paid.');
-    regForm.reset();
-    updateGeneralStats(); // Refresh count stats if needed
-  });
-
-  stkDoneBtn.addEventListener('click', () => {
-    simulatorOverlay.style.display = 'none';
-    alert('Welcome to UNMTA! Your membership is now active.');
-    regForm.reset();
-    updateGeneralStats();
-  });
-
-  // --- 5. Admin Panel Operations ---
-  const adminLoginForm = document.getElementById('admin-login-form');
-  const adminLoginPanel = document.getElementById('admin-login-panel');
-  const adminDashboardPanel = document.getElementById('admin-dashboard-panel');
-  const adminPassInput = document.getElementById('admin-pass');
-  const adminLoginError = document.getElementById('admin-login-error');
-  const adminLogoutBtn = document.getElementById('admin-logout');
-
-  const adminStatTotal = document.getElementById('admin-stat-total');
-  const adminStatActive = document.getElementById('admin-stat-active');
-  const adminStatFunds = document.getElementById('admin-stat-funds');
-  const memberSearchInput = document.getElementById('member-search');
-  const memberTableBody = document.getElementById('member-table-body');
-
-  // Admin Modals
-  const openAddModalBtn = document.getElementById('open-add-member-modal');
-  const closeAddModalBtn = document.getElementById('close-add-member-modal');
-  const addMemberModal = document.getElementById('add-member-modal');
-  const adminAddForm = document.getElementById('admin-add-member-form');
-
-  adminLoginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const password = adminPassInput.value;
-
-    try {
-      const response = await fetch('/api/admin/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        adminPassword = password;
-        adminLoginPanel.style.display = 'none';
-        adminDashboardPanel.classList.add('active');
-        fetchAdminMembers();
-      } else {
-        adminLoginError.textContent = data.message || 'Login failed.';
-        adminLoginError.style.display = 'block';
-      }
-    } catch (err) {
-      console.error(err);
-      adminLoginError.textContent = 'Connection error.';
-      adminLoginError.style.display = 'block';
-    }
-  });
-
-  adminLogoutBtn.addEventListener('click', () => {
-    adminPassword = '';
-    adminPassInput.value = '';
-    adminLoginPanel.style.display = 'flex';
-    adminDashboardPanel.classList.remove('active');
-    allMembers = [];
-  });
-
-  async function fetchAdminMembers() {
-    try {
-      const response = await fetch('/api/admin/members', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: adminPassword })
-      });
-      const data = await response.json();
-
-      if (data.success) {
-        allMembers = data.members;
-        renderMemberTable(allMembers);
-        calculateAdminStats(allMembers);
-      } else {
-        alert('Failed to retrieve members list. Logging out.');
-        adminLogoutBtn.click();
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Error fetching members.');
-    }
+  const heroImage = $('#hero-image');
+  const caption = $('#hero-caption');
+  const indexLabel = $('#photo-index');
+  const dots = $('#slide-dots');
+  let activeSlide = 0;
+  let timer;
+  dots.innerHTML = data.heroImages.map((_, index) => `<button type="button" aria-label="Show featured image ${index + 1}" aria-current="${index === 0 ? 'true' : 'false'}"></button>`).join('');
+  const dotButtons = [...dots.querySelectorAll('button')];
+  function showSlide(index) {
+    activeSlide = (index + data.heroImages.length) % data.heroImages.length;
+    const slide = data.heroImages[activeSlide];
+    heroImage.classList.add('is-changing');
+    const next = new Image();
+    next.onload = () => { heroImage.src = slide.src; heroImage.alt = slide.alt; heroImage.classList.remove('is-changing'); };
+    next.onerror = () => { heroImage.src = '/images/nairobi-bg.png'; heroImage.alt = 'Nairobi city view'; heroImage.classList.remove('is-changing'); };
+    next.src = slide.src;
+    caption.textContent = slide.caption;
+    indexLabel.textContent = `${String(activeSlide + 1).padStart(2, '0')} / ${String(data.heroImages.length).padStart(2, '0')}`;
+    dotButtons.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === activeSlide)));
   }
-
-  function renderMemberTable(members) {
-    memberTableBody.innerHTML = '';
-    
-    if (members.length === 0) {
-      memberTableBody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted);">No members registered yet.</td></tr>`;
-      return;
-    }
-
-    members.forEach(member => {
-      const tr = document.createElement('tr');
-      
-      const paymentBadgeClass = member.payment_status === 'Paid' ? 'badge-paid' : 'badge-pending';
-      const statusBadgeClass = member.status === 'Active' ? 'badge-active' : 'badge-discontinued';
-      const statusActionIcon = member.status === 'Active' ? 'fa-user-slash' : 'fa-user-check';
-      const statusActionTitle = member.status === 'Active' ? 'Discontinue Member' : 'Reactivate Member';
-
-      tr.innerHTML = `
-        <td><strong>${escapeHtml(member.name)}</strong></td>
-        <td>${escapeHtml(member.reg_no)}</td>
-        <td>${escapeHtml(member.email)}</td>
-        <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(member.course)}">
-          ${escapeHtml(member.course)}
-        </td>
-        <td>${escapeHtml(member.year_of_study)}</td>
-        <td><span class="badge ${paymentBadgeClass}">${escapeHtml(member.payment_status)}</span></td>
-        <td><span class="badge ${statusBadgeClass}">${escapeHtml(member.status)}</span></td>
-        <td class="admin-actions-cell">
-          <button class="table-btn table-btn-status" onclick="toggleMemberStatus(${member.id}, '${member.status}')" title="${statusActionTitle}">
-            <i class="fa-solid ${statusActionIcon}"></i>
-          </button>
-          <button class="table-btn table-btn-delete" onclick="deleteMember(${member.id})" title="Delete Member">
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-        </td>
-      `;
-      memberTableBody.appendChild(tr);
-    });
+  function restartCarousel() {
+    window.clearInterval(timer);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
   }
+  $('#slide-prev').addEventListener('click', () => { showSlide(activeSlide - 1); restartCarousel(); });
+  $('#slide-next').addEventListener('click', () => { showSlide(activeSlide + 1); restartCarousel(); });
+  dotButtons.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); restartCarousel(); }));
+  showSlide(0); restartCarousel();
 
-  function calculateAdminStats(members) {
-    adminStatTotal.textContent = members.length;
-    
-    const activeCount = members.filter(m => m.status === 'Active' && m.payment_status === 'Paid').length;
-    adminStatActive.textContent = activeCount;
-
-    const totalFunds = members.reduce((sum, m) => sum + (m.amount_paid || 0), 0);
-    adminStatFunds.textContent = totalFunds.toLocaleString();
-  }
-
-  // Live member search filtering
-  memberSearchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    const filtered = allMembers.filter(m => 
-      m.name.toLowerCase().includes(query) || 
-      m.reg_no.toLowerCase().includes(query) || 
-      m.email.toLowerCase().includes(query) ||
-      m.course.toLowerCase().includes(query)
-    );
-    renderMemberTable(filtered);
+  const menuButton = $('.menu-toggle');
+  const nav = $('#primary-nav');
+  menuButton.addEventListener('click', () => {
+    const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    nav.classList.toggle('is-open', open);
+  });
+  nav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) { menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation'); nav.classList.remove('is-open'); }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation'); nav.classList.remove('is-open'); }
   });
 
-  // Modal Handlers
-  openAddModalBtn.addEventListener('click', () => {
-    addMemberModal.style.display = 'flex';
+  const lightbox = $('#lightbox');
+  const lightboxImage = $('#lightbox-image');
+  const lightboxCaption = $('#lightbox-caption');
+  const closeLightbox = $('.lightbox-close');
+  $('#gallery').addEventListener('click', (event) => {
+    const button = event.target.closest('.gallery-item');
+    if (!button) return;
+    const photo = data.gallery[Number(button.dataset.photo)];
+    lightboxImage.src = photo.src; lightboxImage.alt = photo.alt; lightboxCaption.textContent = photo.title;
+    lightbox.showModal(); closeLightbox.focus();
   });
-
-  closeAddModalBtn.addEventListener('click', () => {
-    addMemberModal.style.display = 'none';
-    adminAddForm.reset();
-  });
-
-  adminAddForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('admin-add-name').value.trim();
-    const reg_no = document.getElementById('admin-add-reg').value.trim();
-    const email = document.getElementById('admin-add-email').value.trim();
-    const course = document.getElementById('admin-add-course').value;
-    const year_of_study = document.getElementById('admin-add-year').value;
-    const phone = document.getElementById('admin-add-phone').value.trim();
-    const payment_status = document.getElementById('admin-add-payment').value;
-
-    try {
-      const response = await fetch('/api/admin/members/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          password: adminPassword,
-          name, reg_no, email, course, year_of_study, phone, payment_status
-        })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert('Member added successfully.');
-        addMemberModal.style.display = 'none';
-        adminAddForm.reset();
-        fetchAdminMembers();
-        updateGeneralStats();
-      } else {
-        alert(data.message || 'Failed to add member.');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Error connecting to backend.');
-    }
-  });
-
-  // Expose status update and delete functions to global window context for table buttons
-  window.toggleMemberStatus = async (id, currentStatus) => {
-    const nextStatus = currentStatus === 'Active' ? 'Discontinued' : 'Active';
-    const message = `Are you sure you want to change this member's status to ${nextStatus}?`;
-    if (!confirm(message)) return;
-
-    try {
-      const response = await fetch('/api/admin/members/status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          password: adminPassword,
-          memberId: id,
-          status: nextStatus
-        })
-      });
-      const data = await response.json();
-
-      if (data.success) {
-        fetchAdminMembers();
-        updateGeneralStats();
-      } else {
-        alert(data.message || 'Failed to update status.');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Connection error updating status.');
-    }
-  };
-
-  window.deleteMember = async (id) => {
-    if (!confirm('Are you sure you want to permanently delete this member record? This action cannot be undone.')) return;
-
-    try {
-      const response = await fetch('/api/admin/members/delete', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          password: adminPassword,
-          memberId: id
-        })
-      });
-      const data = await response.json();
-
-      if (data.success) {
-        fetchAdminMembers();
-        updateGeneralStats();
-      } else {
-        alert(data.message || 'Deletion failed.');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Connection error deleting member.');
-    }
-  };
-
-  // --- 6. General Landing Stats Fetcher ---
-  // Simple public fetcher to update landing page counters (like total active members count)
-  async function updateGeneralStats() {
-    try {
-      // We can login with guest credentials or fetch simple summary, 
-      // but for absolute simplicity, we retrieve the count by hitting a quick mock call or counting from local db.
-      // Since we already have admin login, we can make the landing counter static (e.g. 150+) or fetch it dynamically
-      // if there's a public endpoint. Let's create a public statistics endpoint or query from database directly.
-      // Wait, we can fetch all members count using a simple route or read the database size.
-      // Let's make the front-end fetch a quick active members count if we wanted to.
-      // For now, let's update it based on our seeded values or mock it nicely.
-    } catch (err) {
-      console.log('Error updating landing stats:', err);
-    }
-  }
-
-  // Helper function to escape HTML special characters for security
-  function escapeHtml(text) {
-    if (!text) return '';
-    const map = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#039;'
-    };
-    return text.toString().replace(/[&<>"']/g, function(m) { return map[m]; });
-  }
-
-  // Run initial setups
-  updateGeneralStats();
-});
+  closeLightbox.addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+})();
