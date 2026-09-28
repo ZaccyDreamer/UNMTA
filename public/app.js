@@ -36,6 +36,24 @@
   $('#join-whatsapp').href = waJoin;
   $('#year').textContent = new Date().getFullYear();
 
+  function updateEventCountdowns() {
+    document.querySelectorAll('.event-countdown[data-date]').forEach((element) => {
+      const remaining = new Date(element.dataset.date).getTime() - Date.now();
+      if (remaining <= 0) {
+        element.textContent = 'Event time has passed';
+        return;
+      }
+      const seconds = Math.floor(remaining / 1000);
+      const days = Math.floor(seconds / 86400);
+      const hours = Math.floor((seconds % 86400) / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+      element.textContent = `${days}d ${hours}h ${minutes}m ${secs}s`;
+    });
+  }
+  updateEventCountdowns();
+  window.setInterval(updateEventCountdowns, 1000);
+
   const heroImage = $('#hero-image');
   const caption = $('#hero-caption');
   const indexLabel = $('#photo-index');

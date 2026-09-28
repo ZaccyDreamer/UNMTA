@@ -57,3 +57,15 @@
 .values-grid h4{display:inline;font:700 13px var(--display);margin:0}
 .values-grid p{display:inline;font-size:12px;line-height:1.8;color:#48534a;margin:0}
 @media(max-width:720px){.governance-content{margin-top:37px;padding-top:21px}.governance-heading{font-size:18px}.official-statements{padding-top:0}.objectives-list,.strategies-list,.values-grid{grid-template-columns:1fr}.objectives-list li,.strategies-list li{font-size:11px}.values-grid h4,.values-grid p{font-size:11px}}
+
+.upcoming-events{display:grid;grid-template-columns:1fr auto;gap:18px 24px;align-items:center}
+.upcoming-events-heading{display:flex;align-items:center;gap:15px;grid-column:1/-1}
+.upcoming-events-heading h3{font:700 17px var(--display);margin:0}
+.upcoming-events-heading p{font-size:11px;color:var(--muted);margin:3px 0 0}
+.upcoming-event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;grid-column:1/-1}
+.upcoming-event-card{min-width:0;padding:16px 18px;background:#fff;border:1px solid #dfe4d8;border-left:3px solid #a6bd35}
+.upcoming-event-card h4{font:700 14px/1.4 var(--display);margin:7px 0 4px}
+.upcoming-event-card>p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}
+.event-countdown{margin-top:11px;padding-top:9px;border-top:1px solid #e7e9e2;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.025em;color:#52631c}
+.upcoming-events .stay-loop{justify-self:end;white-space:nowrap}
+@media(max-width:720px){.upcoming-events{grid-template-columns:1fr}.upcoming-events-heading,.upcoming-event-grid{grid-column:auto}.upcoming-event-grid{grid-template-columns:1fr}.upcoming-events .stay-loop{justify-self:start;margin-left:0}}
