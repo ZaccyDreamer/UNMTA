@@ -40,3 +40,20 @@
 .footer-bottom{min-height:58px}
 @media(max-width:960px){.footer-main{grid-template-columns:1fr 1fr;gap:30px}.footer-connect{grid-column:2}.footer-callout{padding-block:38px}}
 @media(max-width:720px){.primary-nav .nav-home::after{display:none}.footer-callout{align-items:flex-start;flex-direction:column;padding-block:34px}.footer-main{grid-template-columns:1fr;gap:26px;padding-block:30px}.footer-connect{grid-column:auto}.footer-nav{grid-template-columns:repeat(2,minmax(110px,1fr));max-width:360px}.footer-bottom{align-items:flex-start;justify-content:center;flex-direction:column;padding-block:14px}}
+
+.governance-content{margin-top:50px;padding-top:26px;border-top:1px solid var(--line)}
+.governance-heading{font:700 clamp(18px,2vw,23px)/1.35 var(--display);letter-spacing:-.035em;margin:0 0 19px}
+.official-statements{margin-top:0;padding-top:5px;border-top:0}
+.official-statements .section-kicker{margin:0;color:#748718}
+.official-statements p{font-size:13px;line-height:1.85;color:#48534a;margin:9px 0 0}
+.objectives-block{margin-top:26px}
+.objectives-block>.section-kicker{margin-bottom:12px}
+.objectives-list,.strategies-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-top:1px solid var(--line)}
+.objectives-list li,.strategies-list li{display:grid;grid-template-columns:46px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.7;color:#48534a}
+.objectives-list li span{font-size:10px;font-weight:700;color:#80913c;padding-top:2px}
+.strategies-list li{display:block;padding:13px 0}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 34px;border-top:1px solid var(--line)}
+.values-grid article{padding:14px 0;border-bottom:1px solid var(--line)}
+.values-grid h4{display:inline;font:700 13px var(--display);margin:0}
+.values-grid p{display:inline;font-size:12px;line-height:1.8;color:#48534a;margin:0}
+@media(max-width:720px){.governance-content{margin-top:37px;padding-top:21px}.governance-heading{font-size:18px}.official-statements{padding-top:0}.objectives-list,.strategies-list,.values-grid{grid-template-columns:1fr}.objectives-list li,.strategies-list li{font-size:11px}.values-grid h4,.values-grid p{font-size:11px}}
