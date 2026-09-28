@@ -25,14 +25,14 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-        <a href="#about">About</a><a href="#activities">Activities</a><a href="#events">Events</a><a href="#leadership">Leadership</a><a href="#constitution">Constitution</a><a href="#contact">Contact</a>
+        <a class="nav-home" href="#home" aria-current="page">Home</a><a href="#about">About</a><a href="#activities">Activities</a><a href="#events">Events</a><a href="#leadership">Leadership</a><a href="#constitution">Constitution</a><a href="#contact">Contact</a>
         <a class="nav-join" href="#membership">Join UNMTA <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero section-wrap" aria-labelledby="hero-title">
+    <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="eyebrow"><span class="eyebrow-dot"></span> Chiromo Campus • Physics Department</div>
         <h1 id="hero-title">Innovating the future of technology</h1>
@@ -83,7 +83,11 @@
     <section class="contact section-space" id="contact"><div class="section-wrap contact-grid"><div><div class="section-kicker">09 / SAY HELLO</div><h2>Good things start<br>with a <em>conversation.</em></h2><p>Questions about joining, activities or membership? Reach out through an official UNMTA channel.</p></div><div class="contact-links" id="contact-links"></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="section-wrap footer-main"><a class="brand footer-brand" href="#top"><img src="/images/unmta-logo.png" alt="" width="42" height="42"><span><strong>UNMTA</strong><small>University of Nairobi</small></span></a><p>A student-powered community to connect, learn, build and grow.<br><span class="footer-membership">Membership: KSh 200 initial · KSh 100 annual renewal</span></p><div class="footer-nav"><a href="#about">About</a><a href="#activities">Activities</a><a href="#events">Events</a><a href="#leadership">Leadership</a><a href="#membership">Membership</a><a href="#constitution">Constitution</a><a href="#contact">Contact</a></div><div class="footer-social" id="footer-social"></div></div><div class="section-wrap footer-bottom"><span>© <span id="year"></span> University of Nairobi Microprocessor Technology Association</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer">
+    <div class="section-wrap footer-callout"><div><span class="footer-kicker">YOUR NEXT IDEA STARTS HERE</span><h2>Curious minds.<br><em>Shared momentum.</em></h2></div><a class="button button-cream" href="#membership">Become a member <span aria-hidden="true">↗</span></a></div>
+    <div class="section-wrap footer-main"><div class="footer-about"><a class="brand footer-brand" href="#home"><img src="/images/unmta-logo.png" alt="" width="42" height="42"><span><strong>UNMTA</strong><small>University of Nairobi</small></span></a><p>A student-powered community to connect, learn, build and grow.</p><span class="footer-membership">Membership: KSh 200 initial · KSh 100 annual renewal</span></div><div class="footer-links-block"><span class="footer-label">EXPLORE</span><nav class="footer-nav" aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#activities">Activities</a><a href="#events">Events</a><a href="#leadership">Leadership</a><a href="#constitution">Constitution</a><a href="#membership">Membership</a><a href="#contact">Contact</a></nav></div><div class="footer-connect"><span class="footer-label">STAY CONNECTED</span><p>Follow our work and get in touch with the association.</p><div class="footer-social" id="footer-social"></div></div></div>
+    <div class="section-wrap footer-bottom"><span>© <span id="year"></span> University of Nairobi Microprocessor Technology Association</span><a href="#home">Back to top ↑</a></div>
+  </footer>
   <dialog class="lightbox" id="lightbox" aria-label="Community photograph"><button type="button" class="lightbox-close" aria-label="Close image">×</button><img id="lightbox-image" src="" alt=""><p id="lightbox-caption"></p></dialog>
 </body>
 </html>
