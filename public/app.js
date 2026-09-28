@@ -58,7 +58,7 @@
   }
   function restartCarousel() {
     window.clearInterval(timer);
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => showSlide(activeSlide + 1), 3000);
   }
   $('#slide-prev').addEventListener('click', () => { showSlide(activeSlide - 1); restartCarousel(); });
   $('#slide-next').addEventListener('click', () => { showSlide(activeSlide + 1); restartCarousel(); });

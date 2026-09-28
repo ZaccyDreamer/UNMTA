@@ -10,7 +10,6 @@ window.UNMTA_DATA = {
   heroImages: [
     { src: '/images/uon-main-premise.jpeg', alt: 'Main University of Nairobi campus premise with landscaped grounds', caption: 'University of Nairobi · Main Campus.' },
     { src: '/images/uon-campus-view.png', alt: 'View across the University of Nairobi campus and surrounding city', caption: 'A view across the University of Nairobi.' },
-    { src: 'https://meteorology.uonbi.ac.ke/sites/default/files/2020-11/college%20of%20biological%20%26physical%20sciences.jpg', alt: 'Students gathered on the University of Nairobi Chiromo campus grounds', caption: 'University of Nairobi · Chiromo Campus.' },
     { src: '/images/alumni-talk.jpg', alt: 'UNMTA alumni and students in a classroom discussion', caption: 'Learn from experience.' },
     { src: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', caption: 'Build community together.' },
     { src: '/images/light-controller-project.jpg', alt: 'Student built light and switching controller project', caption: 'Turn ideas into working projects.' },
