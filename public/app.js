@@ -36,6 +36,15 @@
   $('#join-whatsapp').href = waJoin;
   $('#year').textContent = new Date().getFullYear();
 
+  const pageShortcuts = $('.page-shortcuts');
+  const siteFooter = $('.site-footer');
+  const updatePageShortcuts = () => pageShortcuts.classList.toggle('is-visible', window.scrollY > 360);
+  window.addEventListener('scroll', updatePageShortcuts, { passive: true });
+  updatePageShortcuts();
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => pageShortcuts.classList.toggle('is-footer-visible', entry.isIntersecting), { threshold: 0.05 }).observe(siteFooter);
+  }
+
   function updateEventCountdowns() {
     document.querySelectorAll('.event-countdown[data-date]').forEach((element) => {
       const remaining = new Date(element.dataset.date).getTime() - Date.now();
