@@ -8,6 +8,7 @@ window.UNMTA_DATA = {
     instagram: 'https://www.instagram.com/unmta_association?stkn=MWZncGtrMTd4ODF5ZA=='
   },
   heroImages: [
+    { src: 'https://meteorology.uonbi.ac.ke/sites/default/files/2020-11/college%20of%20biological%20%26physical%20sciences.jpg', alt: 'Students gathered on the University of Nairobi Chiromo campus grounds', caption: 'University of Nairobi · Chiromo Campus.' },
     { src: '/images/alumni-talk.jpg', alt: 'UNMTA alumni and students in a classroom discussion', caption: 'Learn from experience.' },
     { src: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', caption: 'Build community together.' },
     { src: '/images/light-controller-project.jpg', alt: 'Student built light and switching controller project', caption: 'Turn ideas into working projects.' },
