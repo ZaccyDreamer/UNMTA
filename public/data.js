@@ -8,26 +8,58 @@ window.UNMTA_DATA = {
     instagram: 'https://www.instagram.com/unmta_association?stkn=MWZncGtrMTd4ODF5ZA=='
   },
   heroImages: [
-    { src: '/images/nairobi-bg.png', alt: 'Nairobi campus and city view', caption: 'Rooted at the University of Nairobi.' },
-    { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=82', alt: 'Students collaborating around a laptop', caption: 'Curiosity becomes capability.' },
-    { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=82', alt: 'Close-up of a printed circuit board', caption: 'Explore how technology works.' },
-    { src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82', alt: 'A team sharing ideas around a table', caption: 'Better ideas happen together.' },
-    { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=82', alt: 'A student team learning together', caption: 'Make room to learn and grow.' }
+    { src: '/images/alumni-talk.jpg', alt: 'UNMTA alumni and students in a classroom discussion', caption: 'Learn from experience.' },
+    { src: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', caption: 'Build community together.' },
+    { src: '/images/light-controller-project.jpg', alt: 'Student built light and switching controller project', caption: 'Turn ideas into working projects.' },
+    { src: '/images/technical-project.jpg', alt: 'Student-built automatic pet feeding dispenser prototype', caption: 'Learn by making.' },
+    { src: '/images/technical-project.jpg', alt: 'Microcontroller prototype for an automatic pet feeder', caption: 'Create technology that helps.' }
   ],
   activities: [
-    { number: '01', title: 'Hackathons', text: 'Practical hardware and software challenges where ideas become prototypes.', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=78', alt: 'Electronic components on a circuit board', icon: '↗' },
-    { number: '02', title: 'Alumni talks', text: 'Experiences, career journeys and technical knowledge shared across generations.', image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=78', alt: 'Speaker sharing ideas with an audience', icon: '◉' },
-    { number: '03', title: 'Interactive sessions', text: 'Discussions, games and hands-on sessions that make learning social.', image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=78', alt: 'People talking together around a table', icon: '✳' },
-    { number: '04', title: 'Industry visits', text: 'Exposure to real workplaces, engineering systems and professional practice.', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=78', alt: 'Engineer working with technology', icon: '⌁' },
-    { number: '05', title: 'Technical learning', text: 'Peer learning, demonstrations, workshops and practical projects.', image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=78', alt: 'Students collaborating on a project', icon: '⌘' },
-    { number: '06', title: 'Community life', text: 'Social activities that help students build relationships across years.', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=78', alt: 'Friends spending time together outdoors', icon: '♡' }
+    { number: '01', title: 'Hackathons', text: 'Practical hardware and software challenges where ideas become prototypes.', image: '/images/technical-project.jpg', alt: 'Student-built automatic pet feeder prototype', icon: '↗' },
+    { number: '02', title: 'Alumni talks', text: 'Experiences, career journeys and technical knowledge shared across generations.', image: '/images/alumni-talk.jpg', alt: 'UNMTA alumni talk in a classroom', icon: '◉' },
+    { number: '03', title: 'Interactive sessions', text: 'Discussions, games and hands-on sessions that make learning social.', image: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', icon: '✳' },
+    { number: '04', title: 'Industry visits', text: 'Exposure to real workplaces, engineering systems and professional practice.', image: '/images/light-controller-project.jpg', alt: 'Student built light and switching controller', icon: '⌁' },
+    { number: '05', title: 'Technical learning', text: 'Peer learning, demonstrations, workshops and practical projects.', image: '/images/technical-project.jpg', alt: 'Student-built automatic pet feeder project', icon: '⌘' },
+    { number: '06', title: 'Community life', text: 'Social activities that help students build relationships across years.', image: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', icon: '♡' }
   ],
-  collaborations: ['Dell Technologies', 'AFRITEC', 'Gearbox', 'IEEE', 'Photonics'],
-  leadership: ['Chairperson', 'Vice Chairperson', 'Secretary-General', 'Organizing Secretary', 'Treasurer', 'Social Media Personnel', 'Assistant Social Media Personnel', '4th Year Representative', '3rd Year Representative', '2nd Year Representative', '1st Year Representative', 'Alumni Representative'],
+  collaborations: ['Technology companies', 'Engineering organizations', 'Research institutions', 'Government and regulatory institutions', 'University departments and laboratories', 'Alumni networks', 'Innovation and technology hubs', 'Professional organizations'],
+  leadership: [
+    { role: 'Chairperson', duty: 'Provides overall leadership and coordination.' },
+    { role: 'Vice Chairperson', duty: 'Supports the Chairperson and helps coordinate Association activities.' },
+    { role: 'Secretary-General', duty: 'Coordinates official communication, documentation, meetings and administration.' },
+    { role: 'Treasurer', duty: 'Oversees financial administration and accountability.' },
+    { role: 'Organizing Secretary', duty: 'Coordinates events, programs, visits, games and other activities.' },
+    { role: 'Social Media / Communications Manager', duty: 'Manages digital communication, publicity, branding and Association visibility.' },
+    { role: 'Assistant Social Media / Communications Manager', duty: 'Supports communication, content creation, publicity and digital activities.' },
+    { role: 'Alumni Representative', duty: 'Connects current members with alumni, professionals and industry networks.' },
+    { role: 'Class Representatives', duty: 'Represent their classes and communicate between students and Association leadership.' }
+  ],
+  programs: [
+    { title: 'Hackathons', text: 'Team innovation challenges using hardware, software, embedded systems, IoT, automation, data and other technologies.' },
+    { title: 'Coding & Programming Activities', text: 'Practical coding sessions, programming challenges, peer learning and software development.' },
+    { title: 'Interactive Day Games', text: 'Games and team-building activities that encourage teamwork, communication and creativity.' },
+    { title: 'Night Games', text: 'Evening recreation for members to socialize, compete and build stronger relationships.' },
+    { title: 'Movie & Tech Nights', text: 'Movie and discussion sessions on technology, science, engineering, space and innovation.' },
+    { title: 'Industrial & Site Visits', text: 'Visits to companies, engineering facilities, laboratories, research institutions and innovation hubs.' },
+    { title: 'Physics & Space Day', text: 'An exhibition celebrating physics, astronomy, astrophysics, technology and student projects.' },
+    { title: 'Technical Workshops', text: 'Hands-on sessions in electronics, microcontrollers, embedded systems, instrumentation, automation, robotics and IoT.' },
+    { title: 'Alumni Career Talks', text: 'Alumni and professionals share career journeys, technical knowledge and guidance.' },
+    { title: 'First-Year Orientation', text: 'Introduce new students to the Association, academic environment, activities and wider UNMTA community.' },
+    { title: 'Innovation & Project Showcases', text: 'Members demonstrate prototypes, research ideas, software, embedded systems and other innovations.' },
+    { title: 'Webinars & Knowledge-Sharing Sessions', text: 'Online and in-person technical discussions, expert presentations, career guidance and academic support.' }
+  ],
+  benefits: [
+    'Develop practical technical skills.', 'Participate in coding and programming activities.',
+    'Build hardware and software projects.', 'Join hackathons and innovation challenges.',
+    'Interact with alumni and professionals.', 'Attend technical workshops and webinars.',
+    'Participate in industrial and site visits.', 'Develop teamwork and leadership skills.',
+    'Take part in academic and peer mentorship.', 'Attend social and recreational activities.',
+    'Showcase projects and innovations.', 'Build professional networks.'
+  ],
   gallery: [
-    { title: 'Ideas take shape', alt: 'Hands-on electronics and prototyping', src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=80', className: 'gallery-large' },
-    { title: 'Learn side by side', alt: 'Students working together at a table', src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=78', className: '' },
-    { title: 'Curiosity in action', alt: 'Student examining a technical project', src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=78', className: '' },
-    { title: 'The people make it', alt: 'Friends sharing a moment together', src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=78', className: '' }
+    { title: 'Hands-on projects', alt: 'Student-built light and switching controller prototype', src: '/images/light-controller-project.jpg', className: 'gallery-large' },
+    { title: 'Alumni talk', alt: 'UNMTA alumni and students in a classroom discussion', src: '/images/alumni-talk.jpg', className: '' },
+    { title: 'Automatic pet feeder', alt: 'Student-built automatic pet feeder prototype', src: '/images/technical-project.jpg', className: '' },
+    { title: 'Community life', alt: 'UNMTA students meeting outdoors on campus', src: '/images/pet-feeder-project.jpg', className: '' }
   ]
 };

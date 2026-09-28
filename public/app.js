@@ -10,17 +10,19 @@
     <article class="activity-card"><a class="activity-image" href="#membership" aria-label="Learn about UNMTA ${escapeHTML(activity.title)} activities"><img src="${escapeHTML(activity.image)}" alt="${escapeHTML(activity.alt)}" loading="lazy"><span class="activity-icon" aria-hidden="true">${activity.icon}</span></a><div class="activity-body"><span class="card-number">${activity.number} / ACTIVITY</span><h3>${escapeHTML(activity.title)}</h3><p>${escapeHTML(activity.text)}</p><a class="card-link" href="#membership" aria-label="Explore membership for ${escapeHTML(activity.title)}">Explore <span aria-hidden="true">↗</span></a></div></article>`).join('');
 
   $('#collab-list').innerHTML = data.collaborations.map((name, index) => `<div class="collab-name"><span>0${index + 1}</span>${escapeHTML(name)}</div>`).join('');
-  $('#leaders-grid').innerHTML = data.leadership.map((role, index) => `<article class="leader-card"><div class="leader-top"><span class="leader-number">${String(index + 1).padStart(2, '0')}</span><span class="leader-symbol" aria-hidden="true">✳</span></div><h3>${escapeHTML(role)}</h3><p>Name to be updated</p></article>`).join('');
+  $('#leaders-grid').innerHTML = data.leadership.map((leader, index) => `<article class="leader-card"><div class="leader-top"><span class="leader-number">${String(index + 1).padStart(2, '0')}</span><span class="leader-symbol" aria-hidden="true">✳</span></div><h3>${escapeHTML(leader.role)}</h3><p>${escapeHTML(leader.duty)}</p></article>`).join('');
+  $('#program-grid').innerHTML = data.programs.map((program, index) => `<article class="program-item"><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${escapeHTML(program.title)}</h3><p>${escapeHTML(program.text)}</p></div></article>`).join('');
+  $('#benefit-list').innerHTML = data.benefits.map((benefit) => `<li>${escapeHTML(benefit)}</li>`).join('');
   $('#gallery').innerHTML = data.gallery.map((photo, index) => `<button class="gallery-item ${photo.className}" type="button" data-photo="${index}" aria-label="View image: ${escapeHTML(photo.title)}"><img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy"><span>${escapeHTML(photo.title)} <b aria-hidden="true">↗</b></span></button>`).join('');
   document.querySelectorAll('#activity-grid img, #gallery img').forEach((image) => image.addEventListener('error', () => {
     if (image.dataset.fallback) return;
     image.dataset.fallback = 'true';
-    image.src = '/images/nairobi-bg.png';
-    image.alt = 'Nairobi campus and city view';
+    image.src = '/images/alumni-talk.jpg';
+    image.alt = 'UNMTA alumni talk';
     const galleryItem = image.closest('.gallery-item');
     if (galleryItem) {
       const photo = data.gallery[Number(galleryItem.dataset.photo)];
-      photo.src = '/images/nairobi-bg.png'; photo.alt = image.alt;
+      photo.src = '/images/alumni-talk.jpg'; photo.alt = image.alt;
     }
   }));
 
@@ -48,7 +50,7 @@
     heroImage.classList.add('is-changing');
     const next = new Image();
     next.onload = () => { heroImage.src = slide.src; heroImage.alt = slide.alt; heroImage.classList.remove('is-changing'); };
-    next.onerror = () => { heroImage.src = '/images/nairobi-bg.png'; heroImage.alt = 'Nairobi city view'; heroImage.classList.remove('is-changing'); };
+    next.onerror = () => { heroImage.src = '/images/alumni-talk.jpg'; heroImage.alt = 'UNMTA alumni talk'; heroImage.classList.remove('is-changing'); };
     next.src = slide.src;
     caption.textContent = slide.caption;
     indexLabel.textContent = `${String(activeSlide + 1).padStart(2, '0')} / ${String(data.heroImages.length).padStart(2, '0')}`;
