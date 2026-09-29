@@ -12,7 +12,7 @@
   $('#collab-list').innerHTML = data.collaborations.map((name, index) => `<div class="collab-name"><span>0${index + 1}</span>${escapeHTML(name)}</div>`).join('');
   $('#leaders-grid').innerHTML = data.leadership.map((leader, index) => `<article class="leader-card"><div class="leader-top"><span class="leader-number">${String(index + 1).padStart(2, '0')}</span><span class="leader-symbol" aria-hidden="true">✳</span></div><h3>${escapeHTML(leader.role)}</h3><p>${escapeHTML(leader.duty)}</p></article>`).join('');
   $('#program-grid').innerHTML = data.programs.map((program, index) => `<article class="program-item"><span>${String(index + 1).padStart(2, '0')}</span><div><h3>${escapeHTML(program.title)}</h3><p>${escapeHTML(program.text)}</p></div></article>`).join('');
-  $('#benefit-list').innerHTML = data.benefits.map((benefit) => `<li>${escapeHTML(benefit)}</li>`).join('');
+  $('#benefit-list').innerHTML = data.benefits.map((benefit) => `<li><strong>${escapeHTML(benefit.title)}</strong><span>${escapeHTML(benefit.text)}</span></li>`).join('');
   $('#gallery').innerHTML = data.gallery.map((photo, index) => `<button class="gallery-item ${photo.className}" type="button" data-photo="${index}" aria-label="View image: ${escapeHTML(photo.title)}"><img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy"><span>${escapeHTML(photo.title)} <b aria-hidden="true">↗</b></span></button>`).join('');
   document.querySelectorAll('#activity-grid img, #gallery img').forEach((image) => image.addEventListener('error', () => {
     if (image.dataset.fallback) return;
@@ -35,6 +35,11 @@
   $('#footer-social').innerHTML = `${socialLinks}<a href="${wa}" ${external} aria-label="Chat with UNMTA on WhatsApp">${whatsappIcon}<span>WhatsApp</span></a><a href="${data.whatsappCommunity}" ${external} aria-label="Join the UNMTA WhatsApp community"><span aria-hidden="true">↗</span><span>Community</span></a>`;
   $('#join-whatsapp').href = waJoin;
   $('#year').textContent = new Date().getFullYear();
+
+  const returnTop = $('.return-top');
+  const updateReturnTop = () => returnTop.classList.toggle('is-visible', window.scrollY > 360);
+  window.addEventListener('scroll', updateReturnTop, { passive: true });
+  updateReturnTop();
 
   function updateEventCountdowns() {
     document.querySelectorAll('.event-countdown[data-date]').forEach((element) => {
