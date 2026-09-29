@@ -2,7 +2,7 @@
 window.UNMTA_DATA = {
   whatsappNumber: '254742293673',
   whatsappDisplay: '0742293673',
-  whatsappChannel: 'https://chat.whatsapp.com/ElheHgvy7m3Dceg7zeKQS3?s=cl&p=a&mlu=4&ilr=4',
+  whatsappCommunity: 'https://chat.whatsapp.com/ElheHgvy7m3Dceg7zeKQS3?s=cl&p=a&mlu=4&ilr=4',
   socials: {
     linkedin: 'https://www.linkedin.com/company/unmta-university-of-nairobi-microprocessor-and-technology-association/',
     instagram: 'https://www.instagram.com/unmta_association?stkn=MWZncGtrMTd4ODF5ZA=='
@@ -51,12 +51,14 @@ window.UNMTA_DATA = {
     { title: 'Webinars & Knowledge-Sharing Sessions', text: 'Online and in-person technical discussions, expert presentations, career guidance and academic support.' }
   ],
   benefits: [
-    'Develop practical technical skills.', 'Participate in coding and programming activities.',
-    'Build hardware and software projects.', 'Join hackathons and innovation challenges.',
-    'Interact with alumni and professionals.', 'Attend technical workshops and webinars.',
-    'Participate in industrial and site visits.', 'Develop teamwork and leadership skills.',
-    'Take part in academic and peer mentorship.', 'Attend social and recreational activities.',
-    'Showcase projects and innovations.', 'Build professional networks.'
+    '🎟️ Reduced Charges on Selected Events — Members pay discounted rates for selected activities, such as industrial visits.',
+    '⚡ First Access to Information — Receive important UNMTA updates, opportunities and announcements before non-members.',
+    '🎫 Priority Event Access — Get priority consideration for events and activities with limited spaces.',
+    '🏭 Member-Only Opportunities — Access selected activities, visits, sessions and opportunities reserved or prioritized for UNMTA members.',
+    '📢 Direct Member Updates — Receive important information directly through UNMTA’s official communication channels.',
+    '🤝 Member Network — Be part of a dedicated network of students pursuing Microprocessor Technology, Instrumentation and related disciplines.',
+    '🗳️ A Voice in UNMTA Activities — Participate in shaping activities, programs and initiatives that affect members.',
+    '🌐 Access to the UNMTA Community — Stay connected with fellow students, alumni and other members beyond your immediate class.'
   ],
   gallery: [
     { title: 'Hands-on projects', alt: 'Student-built light and switching controller prototype', src: '/images/light-controller-project.jpg', className: 'gallery-large' },

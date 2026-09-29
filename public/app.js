@@ -31,19 +31,10 @@
     : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3.4 15V9.4H5.8V18h2.6ZM7.1 8.2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM18.3 18v-4.7c0-2.5-1.3-3.7-3.1-3.7a2.7 2.7 0 0 0-2.4 1.3V9.4h-2.6V18h2.6v-4.3c0-1.1.2-2.2 1.6-2.2s1.4 1.3 1.4 2.3V18h2.5Z"/></svg>';
   const socialLinks = `<a href="${data.socials.linkedin}" ${external} aria-label="UNMTA on LinkedIn">${socialIcon('linkedin')}<span>LinkedIn</span></a><a href="${data.socials.instagram}" ${external} aria-label="UNMTA on Instagram">${socialIcon('instagram')}<span>Instagram</span></a>`;
   const whatsappIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4A8 8 0 1 1 20 11.7Z"/><path d="M9 8.3c.2-.4.4-.4.7-.4h.4c.1 0 .3 0 .4.3l.7 1.6c.1.2.1.4 0 .5l-.5.6c-.2.2-.2.3 0 .5.4.7 1 1.2 1.7 1.6.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.4 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-.9-.2-2-.6-3.3-1.7-1.1-1-1.9-2.1-2.1-2.9-.3-.8.1-1.6.4-2.2Z"/></svg>';
-  $('#contact-links').innerHTML = `<a class="contact-link whatsapp-link" href="${wa}" ${external}><span class="contact-icon">${whatsappIcon}</span><span><small>MESSAGE THE ASSOCIATION</small><strong>Chat with UNMTA on WhatsApp</strong></span><b aria-hidden="true">↗</b></a><a class="contact-link" href="${data.whatsappChannel}" ${external}><span class="contact-icon" aria-hidden="true">＋</span><span><small>COMMUNITY UPDATES</small><strong>Join our WhatsApp channel</strong></span><b aria-hidden="true">↗</b></a>${socialLinks}`;
-  $('#footer-social').innerHTML = `${socialLinks}<a href="${wa}" ${external} aria-label="Chat with UNMTA on WhatsApp">${whatsappIcon}<span>WhatsApp</span></a><a href="${data.whatsappChannel}" ${external} aria-label="Join the UNMTA WhatsApp channel"><span aria-hidden="true">＋</span><span>Community</span></a>`;
+  $('#contact-links').innerHTML = `<a class="contact-link whatsapp-link" href="${wa}" ${external}><span class="contact-icon">${whatsappIcon}</span><span><small>MESSAGE THE ASSOCIATION</small><strong>Chat with UNMTA on WhatsApp</strong></span><b aria-hidden="true">↗</b></a><a class="contact-link" href="${data.whatsappCommunity}" ${external}><span class="contact-icon" aria-hidden="true">↗</span><span><small>COMMUNITY UPDATES</small><strong>Join the UNMTA WhatsApp community</strong></span><b aria-hidden="true">↗</b></a>${socialLinks}`;
+  $('#footer-social').innerHTML = `${socialLinks}<a href="${wa}" ${external} aria-label="Chat with UNMTA on WhatsApp">${whatsappIcon}<span>WhatsApp</span></a><a href="${data.whatsappCommunity}" ${external} aria-label="Join the UNMTA WhatsApp community"><span aria-hidden="true">↗</span><span>Community</span></a>`;
   $('#join-whatsapp').href = waJoin;
   $('#year').textContent = new Date().getFullYear();
-
-  const pageShortcuts = $('.page-shortcuts');
-  const siteFooter = $('.site-footer');
-  const updatePageShortcuts = () => pageShortcuts.classList.toggle('is-visible', window.scrollY > 360);
-  window.addEventListener('scroll', updatePageShortcuts, { passive: true });
-  updatePageShortcuts();
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => pageShortcuts.classList.toggle('is-footer-visible', entry.isIntersecting), { threshold: 0.05 }).observe(siteFooter);
-  }
 
   function updateEventCountdowns() {
     document.querySelectorAll('.event-countdown[data-date]').forEach((element) => {
