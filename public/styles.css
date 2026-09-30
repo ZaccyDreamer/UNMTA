@@ -143,3 +143,7 @@
 .footer-bottom{border-top-color:#35516d}
 .stats-grid>div{border-left-color:#4c6d8d}
 @media(max-width:720px){.stats-grid>div{border-left-color:#4c6d8d;border-bottom-color:#4c6d8d}}
+
+/* Give the boxed content a clear blue outline and keep contact social marks compact. */
+.activity-card,.past-events,.past-event-card,.event-empty,.upcoming-event-card,.leader-card,.payment-card,.constitution-card,.contact-icon{border-color:#8eb6e0}
+.contact-link svg{width:15px;height:15px}
