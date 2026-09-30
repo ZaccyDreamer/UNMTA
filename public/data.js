@@ -26,8 +26,9 @@ window.UNMTA_DATA = {
   ],
   collaborations: ['AFRITEC', 'Dell Kenya', 'Microsoft', 'Gearbox', 'IEEE Kenya', 'Kenya Nuclear Regulatory Authority (KNRA)'],
   pastEvents: [
-    { title: 'Physics Open Day Hackathon', description: 'Explore the ideas, prototypes and moments from our physics open day hackathon.', url: 'https://photos.app.goo.gl/PZJQaCuirMQ6Sjjk8', label: 'View hackathon photos', icon: '✳' },
-    { title: 'Alumni Talk', description: 'Catch up on our alumni conversation and the connections built across generations.', url: 'https://photos.app.goo.gl/atJiBjGfGKSVx6kUA', label: 'View alumni talk photos', icon: '◉' }
+    { title: 'Physics Open Day Hackathon', description: 'Student ideas and prototypes take the spotlight at our Physics Open Day.', url: 'https://photos.app.goo.gl/PZJQaCuirMQ6Sjjk8', label: 'Explore the photo album', icon: '✳' },
+    { title: 'Alumni Talk', description: 'Career stories and practical advice shared by our alumni community.', url: 'https://photos.app.goo.gl/atJiBjGfGKSVx6kUA', label: 'Explore the photo album', icon: '◉' },
+    { title: 'Dell Industry Event', description: 'A day of technology and industry engagement at Chiromo Campus, University of Nairobi.', url: 'https://photos.app.goo.gl/1QGaEXQj2vYuKAfb9', label: 'Explore the photo album', icon: '↗' }
   ],
   leadership: [
     { role: 'Chairperson', duty: 'Provides overall leadership and coordination.' },

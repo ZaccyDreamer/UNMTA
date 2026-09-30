@@ -26,7 +26,7 @@
 .past-events-heading h3{font:700 clamp(24px,3vw,34px)/1.08 var(--display);letter-spacing:-.05em;margin:0}
 .past-events-heading h3 em{font-style:normal;color:#b9d674}
 .past-events-heading>p{max-width:350px;font-size:11px;line-height:1.7;color:#c1ccd4;margin:0 0 2px}
-.past-event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;position:relative;z-index:1}
+.past-event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;z-index:1}
 .past-event-card{display:flex;min-height:187px;flex-direction:column;padding:18px 19px;background:#ffffff0b;border:1px solid #ffffff25;color:#f8fbff;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
 .past-event-card:hover,.past-event-card:focus-visible{background:#ffffff15;border-color:#b9d674;transform:translateY(-2px);outline:none}
 .past-event-top{display:flex;justify-content:space-between;align-items:center}
@@ -34,9 +34,13 @@
 .past-event-icon{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;color:#192a3a;background:#b9d674;font-size:15px}
 .past-event-title{font:700 19px/1.25 var(--display);letter-spacing:-.035em;margin-top:17px}
 .past-event-description{font-size:10px;line-height:1.65;color:#c1ccd4;margin-top:5px;max-width:390px}
-.past-event-link{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff25;margin-top:auto;padding-top:11px;font-size:9px;font-weight:700;color:#d2e79b}
-.past-event-link b{font-size:14px;font-weight:500}
+.past-event-link{align-self:flex-start;display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:auto;padding:9px 12px;border:1px solid #b9d674;border-radius:3px;background:#b9d674;color:#192a3a;font-size:9px;font-weight:700;transition:background .2s,color .2s}
+.past-event-link b{font-size:14px;font-weight:700;transition:transform .2s}
+.past-event-card:hover .past-event-link,.past-event-card:focus-visible .past-event-link{background:transparent;color:#d2e79b}
+.past-event-card:hover .past-event-link b,.past-event-card:focus-visible .past-event-link b{transform:translate(2px,-2px)}
+.past-event-card:focus-visible{outline:2px solid #d2e79b;outline-offset:3px}
 .collab-intro p{max-width:360px}
+@media(max-width:960px){.past-event-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.past-events{padding:23px 20px}.past-events-heading{align-items:flex-start;flex-direction:column;gap:11px}.past-events-heading>p{max-width:440px}.past-event-grid{grid-template-columns:1fr}.past-event-card{min-height:165px}}
 
 /* Home tab and a clearer, more useful footer */
