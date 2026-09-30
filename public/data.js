@@ -24,7 +24,11 @@ window.UNMTA_DATA = {
     { number: '05', title: 'Technical learning', text: 'Peer learning, demonstrations, workshops and practical projects.', image: '/images/technical-project.jpg', alt: 'Student-built automatic pet feeder project', icon: '⌘' },
     { number: '06', title: 'Community life', text: 'Social activities that help students build relationships across years.', image: '/images/pet-feeder-project.jpg', alt: 'UNMTA students meeting outdoors on campus', icon: '♡' }
   ],
-  collaborations: ['Technology companies', 'Engineering organizations', 'Research institutions', 'Government and regulatory institutions', 'University departments and laboratories', 'Alumni networks', 'Innovation and technology hubs', 'Professional organizations'],
+  collaborations: ['AFRITEC', 'Dell Kenya', 'Microsoft', 'Gearbox', 'IEEE Kenya', 'Kenya Nuclear Regulatory Authority (KNRA)'],
+  pastEvents: [
+    { title: 'Physics Open Day Hackathon', description: 'Explore the ideas, prototypes and moments from our physics open day hackathon.', url: 'https://photos.app.goo.gl/PZJQaCuirMQ6Sjjk8', label: 'View hackathon photos', icon: '✳' },
+    { title: 'Alumni Talk', description: 'Catch up on our alumni conversation and the connections built across generations.', url: 'https://photos.app.goo.gl/atJiBjGfGKSVx6kUA', label: 'View alumni talk photos', icon: '◉' }
+  ],
   leadership: [
     { role: 'Chairperson', duty: 'Provides overall leadership and coordination.' },
     { role: 'Vice Chairperson', duty: 'Supports the Chairperson and helps coordinate Association activities.' },
