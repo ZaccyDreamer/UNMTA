@@ -26,9 +26,9 @@ window.UNMTA_DATA = {
   ],
   collaborations: ['AFRITEC', 'Dell Kenya', 'Microsoft', 'Gearbox', 'IEEE Kenya', 'Kenya Nuclear Regulatory Authority (KNRA)'],
   pastEvents: [
-    { title: 'Physics Open Day Hackathon', description: 'Student ideas and prototypes take the spotlight at our Physics Open Day.', url: 'https://photos.app.goo.gl/PZJQaCuirMQ6Sjjk8', label: 'Explore the photo album', icon: '✳' },
-    { title: 'Alumni Talk', description: 'Career stories and practical advice shared by our alumni community.', url: 'https://photos.app.goo.gl/atJiBjGfGKSVx6kUA', label: 'Explore the photo album', icon: '◉' },
-    { title: 'Dell Industry Event', description: 'A day of technology and industry engagement at Chiromo Campus, University of Nairobi.', url: 'https://photos.app.goo.gl/1QGaEXQj2vYuKAfb9', label: 'Explore the photo album', icon: '↗' }
+    { title: 'Dell Technologies Industry Event', description: 'UNMTA hosted an industry engagement at the University of Nairobi, Chiromo Campus. Students explored technology, industry perspectives and career opportunities.', url: 'https://photos.app.goo.gl/1QGaEXQj2vYuKAfb9', label: 'View photos', icon: '⌘', accent: 'INDUSTRY ENGAGEMENT' },
+    { title: 'Physics Open Day Hackathon', description: 'UNMTA participated in a hackathon where students presented and demonstrated ideas and prototypes. Attendees included the Dean, Deputy Vice-Chancellor, Physics Department chair, and industry and technical experts.', url: 'https://photos.app.goo.gl/PZJQaCuirMQ6Sjjk8', label: 'View photos', icon: '⌁', accent: 'PHYSICS · PROTOTYPING' },
+    { title: 'Alumni Connect', description: 'UNMTA hosted an alumni-focused engagement featuring the Kenya Nuclear Regulatory Authority (KNRA). Students connected with professionals and explored career paths and practical experience in the field.', url: 'https://photos.app.goo.gl/atJiBjGfGKSVx6kUA', label: 'View photos', icon: '◉', accent: 'ALUMNI · KNRA' }
   ],
   leadership: [
     { role: 'Chairperson', duty: 'Provides overall leadership and coordination.' },
